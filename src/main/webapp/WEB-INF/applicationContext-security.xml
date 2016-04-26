@@ -1,0 +1,21 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+<http auto-config='true'>  
+    <!--  <intercept-url pattern="/resource/getUserInfo" access="ROLE_USER" /> 
+          <intercept-url pattern="/resource/getXing" access="ROLE_TEST" /> -->
+</http>
+<authentication-manager alias="authenticationManager">
+		<authentication-provider>
+			<user-service>
+				<user name="yjmyzz" password="123456" authorities="ROLE_USER" />
+				<user name="litaojun" password="123456" authorities="ROLE_TEST" />
+			</user-service>
+		</authentication-provider>
+		<!-- 加入开发人员自定义的Provider
+		<authentication-provider ref="customProvider" /> -->
+</authentication-manager>
+</beans:beans>
