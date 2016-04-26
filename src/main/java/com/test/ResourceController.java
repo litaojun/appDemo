@@ -11,4 +11,17 @@ public class ResourceController {
 		return "resource";
 	}
 	
+	@RequestMapping("/getImage")
+	public String getImage() {
+		return "image";
+	}
+	@RequestMapping("/getXing")
+	public String getXing() {
+		return "xing";
+	}
+	@RequestMapping("/getTest")
+	public String getTest() {
+		return "test";
+	}
+	
 }
