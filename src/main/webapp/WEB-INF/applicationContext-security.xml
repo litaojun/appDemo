@@ -5,8 +5,7 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 <http auto-config='true'>  
-    <!--  <intercept-url pattern="/resource/getUserInfo" access="ROLE_USER" /> 
-          <intercept-url pattern="/resource/getXing" access="ROLE_TEST" /> -->
+
 </http>
 <authentication-manager alias="authenticationManager">
 		<authentication-provider>
