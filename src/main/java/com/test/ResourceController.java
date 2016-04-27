@@ -21,7 +21,7 @@ public class ResourceController {
 	}
 	@RequestMapping("/getTest")
 	public String getTest() {
-		return "test";
+		return "image";
 	}
 	
 }
