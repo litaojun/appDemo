@@ -15,10 +15,12 @@ public class ResourceController {
 	public String getImage() {
 		return "image";
 	}
+	
 	@RequestMapping("/getXing")
 	public String getXing() {
 		return "xing";
 	}
+	
 	@RequestMapping("/getTest")
 	public String getTest() {
 		return "image";
