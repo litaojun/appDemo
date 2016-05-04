@@ -27,6 +27,8 @@
 			default-target-url="/index.jsp" />
 		<anonymous />
 </http>
+<beans:bean id="oauth2AuthenticationEntryPoint"
+		class="org.springframework.security.oauth2.provider.error.OAuth2AuthenticationEntryPoint" />
 <beans:bean id="oauthAccessDeniedHandler"
 		class="org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHandler" />
 <oauth2:resource-server id="picResourceServer"
