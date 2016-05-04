@@ -11,8 +11,7 @@
                         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
                         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
                         http://www.springframework.org/schema/security/oauth2 http://www.springframework.org/schema/security/spring-security-oauth2-1.0.xsd">
-<http pattern="/resource/getImage" create-session="never" entry-point-ref="oauth2AuthenticationEntryPoint"
-		access-decision-manager-ref="oauth2AccessDecisionManager">
+<http pattern="/resource/getImage" create-session="never" entry-point-ref="oauth2AuthenticationEntryPoint" >
 		<anonymous enabled="false" />
 		<intercept-url pattern="/resource/getImage" access="ROLE_USER" />
 		<custom-filter ref="picResourceServer" before="PRE_AUTH_FILTER" />
