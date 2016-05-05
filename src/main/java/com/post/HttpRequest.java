@@ -131,7 +131,7 @@ public class HttpRequest {
 //        System.out.println(s);
         
         //∑¢ÀÕ POST «Î«Û
-        String sr=HttpRequest.sendPost("http://localhost:8080/appDemo/oauth/token", "code=pVcGBp&client_id=m1&client_secret=s1&grant_type=authorization_code&redirect_uri=http%3a%2f%2flocalhost%3a8080%2fappDemo%2flitaojun%2ftestapp");
+        String sr=HttpRequest.sendPost("http://localhost:8080/appDemo/oauth/token", "code=nWtMOy&client_id=m1&client_secret=s1&grant_type=authorization_code&redirect_uri=http%3a%2f%2flocalhost%3a8080%2fappDemo%2flitaojun%2ftestapp");
         System.out.println(sr);
     }
 }
