@@ -11,13 +11,24 @@
                         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
                         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
                         http://www.springframework.org/schema/security/oauth2 http://www.springframework.org/schema/security/spring-security-oauth2-1.0.xsd">
-<http pattern="/resource/**" create-session="never" entry-point-ref="oauth2AuthenticationEntryPoint"
+<http pattern="/resource/**" create-session="never" entry-point-ref="oauth2AuthenticationEntryPoint" 
       access-decision-manager-ref="oauth2AccessDecisionManager">
 		<anonymous enabled="false" />
 		<intercept-url pattern="/resource/getImage" access="ROLE_USER" />
 		<custom-filter ref="picResourceServer" before="PRE_AUTH_FILTER" />
 		<access-denied-handler ref="oauthAccessDeniedHandler" />
 </http>
+
+<http pattern="/oauth/token" create-session="stateless"
+		authentication-manager-ref="clientAuthenticationManager"
+		entry-point-ref="oauth2AuthenticationEntryPoint">
+		<intercept-url pattern="/oauth/token" access="IS_AUTHENTICATED_FULLY" />
+		<anonymous enabled="false" />
+		<http-basic entry-point-ref="oauth2AuthenticationEntryPoint" />
+		<custom-filter ref="clientCredentialsTokenEndpointFilter"
+			before="BASIC_AUTH_FILTER" />
+		<access-denied-handler ref="oauthAccessDeniedHandler" />
+	</http>
 
 <http access-denied-page="/login.jsp?error=true"
 		authentication-manager-ref="authenticationManager">
@@ -28,7 +39,10 @@
 			default-target-url="/index.jsp" />
 		<anonymous />
 </http>
-
+<beans:bean id="clientCredentialsTokenEndpointFilter"
+		class="org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter">
+		<beans:property name="authenticationManager" ref="clientAuthenticationManager" />
+	</beans:bean>
 <authentication-manager id="clientAuthenticationManager">
 		<authentication-provider user-service-ref="oauth2ClientDetailsUserService" />
 </authentication-manager>
