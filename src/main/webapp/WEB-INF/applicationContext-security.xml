@@ -41,7 +41,7 @@
 		<intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<form-login login-page="/login.jsp"
 			authentication-failure-url="/login.jsp?error=true"
-			default-target-url="/index.jsp" />
+			default-target-url="/ind3ex.jsp" />
 		<anonymous />
 	</http>
 

@@ -23,7 +23,7 @@ public class ResourceController {
 	
 	@RequestMapping("/getTest")
 	public String getTest() {
-		return "image";
+		return "litaojun";
 	}
 	
 }

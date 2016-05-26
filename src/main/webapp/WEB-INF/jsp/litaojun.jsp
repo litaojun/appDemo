@@ -23,6 +23,8 @@
     <td align="right">Powered by yihaomen.com</td>
     <td width="9"></td>
   </tr>
+  <p>第三方登录：</p>
+	<p><a href="/appDemo/outh2/qqlogin.do" ><img src="/appDemo/images/qqlogo.png" style="width:40px;height:40px;" /></a></p>
 </table>
 </body>
 </html>

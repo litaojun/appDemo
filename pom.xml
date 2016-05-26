@@ -62,6 +62,11 @@
 		    <artifactId>fastjson</artifactId>
 		    <version>1.2.4</version>
 		</dependency>
+		<dependency>
+		     <groupId>qq.outh2</groupId>
+			  <artifactId>qqauth2</artifactId>
+			  <version>2.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>appDemo</finalName>

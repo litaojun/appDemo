@@ -16,7 +16,7 @@
 			/WEB-INF/applicationContext-security.xml
 		</param-value>
 	</context-param>
-
+  
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -48,7 +48,7 @@
 
 	<servlet-mapping>
 		<servlet-name>test</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 
 
