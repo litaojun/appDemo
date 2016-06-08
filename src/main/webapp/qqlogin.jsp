@@ -9,9 +9,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Login</title>
-<meta property="qc:admins" content="744633271612537523561004162163757164506230" />
+<meta property="qc:admins" content="74463327161754026100416216375711477166230" />
 </head>
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 <script type="text/javascript">
+
 function openusers(token) 
 {
 	sign = isNull(token);
@@ -23,6 +25,11 @@ function openusers(token)
 	window.location.href = url;
 	alert(window.location.href);
 } 
+function openwx()
+{
+	d="https://open.weixin.qq.com/connect/qrconnect?appid="+"wx863f118e59b05e5a"+"&scope="+"snsapi_login"+"&redirect_uri="+"http%3A%2F%2Fwww.livesmg.com%2Fouth2%2Fwxafterlogin.do"+"&state="+"state"+"&response_type=code";
+	window.location.href = d;
+}
 </script>
 <body>
 	<h3>Login page</h3>
@@ -45,5 +52,6 @@ function openusers(token)
 	
 	<p>第三方登录：</p>
 	<p><a href="/outh2/qqlogin.do" ><img src="/images/qqlogo.png" style="width:130px;height:40px;" /></a></p>
+	<p><a href="#" onclick="openwx()" ><img src="/images/icon32_wx_button.png" style="width:130px;height:40px;" /></a></p>
 </body>
 </html>
