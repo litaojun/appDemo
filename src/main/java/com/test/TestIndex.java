@@ -16,12 +16,12 @@ import com.post.HttpRequest;
 @Controller
 @RequestMapping("/litaojun")
 public class TestIndex {
-	@RequestMapping("/testuser")
+	@RequestMapping("/testuser.do")
 	public String getUserInfo() {
 		return "litaojun";
 	}
 	
-	@RequestMapping("/testapp")
+	@RequestMapping("/testapp.do")
 	public String  testApp(@RequestParam(value="code")String code,Map<String,Object> map)
 	{
 		 String reqstr = "code="+code+"&client_id=m1&client_secret=s1&grant_type=authorization_code&redirect_uri=http%3a%2f%2flocalhost%3a8080%2fappDemo%2flitaojun%2ftestapp";
@@ -37,7 +37,7 @@ public class TestIndex {
 	     map.put("expires_in", expiresin);
 	     return "testapp";
 	}
-	@RequestMapping("/testindex")
+	@RequestMapping("/testindex.do")
 	public String testIndex()
 	{
 		return "testapp";

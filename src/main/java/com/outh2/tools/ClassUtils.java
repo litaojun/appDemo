@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.WebApplicationContext;
+
 public class ClassUtils { 
     public static List<Class> getAllImplClassesByInterface(Class c) { 
  
@@ -91,6 +94,38 @@ public class ClassUtils {
             } 
         } 
         return classes; 
+    }
+    
+    
+    
+    public static List<Class> filterClassByKey(String key, String packageName) throws ClassNotFoundException, IOException
+    {
+    	List<Class>  clslist = getClassesByPackageName(packageName);
+    	List<Class> rmls = new ArrayList<Class>();
+    	if(key == null && key.equals(""))
+    		return clslist;
+    	 System.out.println("clslist.size="+clslist.size());
+    	for(Class cls:clslist)
+    	{
+    		String clsname = cls.getName();
+    		if(!clsname.contains(key))
+    		{
+    			//System.out.println(clsname);
+    			rmls.add(cls);
+    		}
+    	}
+    	clslist.removeAll(rmls);
+    	return clslist;
+    }
+    
+    public static void main(String[] args) throws ClassNotFoundException, IOException
+    {
+    	 List<Class>  x = ClassUtils.filterClassByKey("Login","com.outh2");
+    	 System.out.println("xxx="+x.size());
+    	 for(Class s : x)
+    		 System.out.println(s.getName());
+    	 //WebApplicationContext wac = ContextLoader.getCurrentWebApplicationContext();
+
     }
 }
 
