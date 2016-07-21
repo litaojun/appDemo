@@ -28,6 +28,7 @@ import com.qq.connect.oauth.Oauth;
 @RequestMapping("/outh2")
 public class Auth2LoginQq {
 	
+	
 	@RequestMapping(value="/qqlogin.do",method=RequestMethod.GET)
 	protected void qqAuthLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=utf-8");
@@ -47,16 +48,16 @@ public class Auth2LoginQq {
 	                   openID        = null;
 	            long tokenExpireIn = 0L;
 	            if (accessTokenObj.getAccessToken().equals("")) {
-//	                我们的网站被CSRF攻击了或者用户取消了授权
-//	                做一些数据统计工作
-	                System.out.print("没有获取到响应参数");
+//	                锟斤拷锟角碉拷锟斤拷站锟斤拷CSRF锟斤拷锟斤拷锟剿伙拷锟斤拷锟矫伙拷取锟斤拷锟斤拷锟斤拷权
+//	                锟斤拷一些锟斤拷锟斤拷统锟狡癸拷锟斤拷
+	                System.out.print("没锟叫伙拷取锟斤拷锟斤拷应锟斤拷锟斤拷");
 	                return "litaojun";
 	            } else {
 	                accessToken = accessTokenObj.getAccessToken();
 	                tokenExpireIn = accessTokenObj.getExpireIn();
 	                request.getSession().setAttribute("demo_access_token", accessToken);
 	                request.getSession().setAttribute("demo_token_expirein", String.valueOf(tokenExpireIn));
-	                // 利用获取到的accessToken 去获取当前用的openid -------- start
+	                // 锟斤拷锟矫伙拷取锟斤拷锟斤拷accessToken 去锟斤拷取锟斤拷前锟矫碉拷openid -------- start
 	                OpenID openIDObj =  new OpenID(accessToken);
 	                openID = openIDObj.getUserOpenID();
 	                request.getSession().setAttribute("demo_openid", openID);
