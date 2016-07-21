@@ -27,7 +27,14 @@ function openusers(token)
 } 
 function openwx()
 {
-	d="https://open.weixin.qq.com/connect/qrconnect?appid="+"wx863f118e59b05e5a"+"&scope="+"snsapi_login"+"&redirect_uri="+"http%3A%2F%2Fwww.livesmg.com%2Fouth2%2Fwxafterlogin.do"+"&state="+"state"+"&response_type=code";
+	//d="https://open.weixin.qq.com/connect/qrconnect?appid="+"wx863f118e59b05e5a"+"&scope="+"snsapi_login"+"&redirect_uri="+"http%3A%2F%2Fwww.livesmg.com%2Fouth2%2Fwxafterlogin.do"+"&state="+"state"+"&response_type=code";
+	d="https://open.weixin.qq.com/connect/qrconnect?appid="+"wx863f118e59b05e5a"+"&scope="+"snsapi_login"+"&redirect_uri="+"http%3a%2f%2fjavaouth2.applinzi.com%2Fouth2%2Fwxafterlogin.do"+"&state="+"state"+"&response_type=code";
+	window.location.href = d;
+}
+function openzfb()
+{
+	//d="https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2016070801592904&scope=auth_userinfo&state=litaojun&redirect_uri=http%3a%2f%2fwww.livemsg.com%2fappDemo%2fouth2%2fzfbafterlogin.do";
+	d="https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2016070801592904&scope=auth_userinfo&state=litaojun&redirect_uri=http%3a%2f%2fjavaouth2.applinzi.com%2fouth2%2fzfbafterlogin.do";
 	window.location.href = d;
 }
 </script>
@@ -49,9 +56,13 @@ function openwx()
 			</tr>
 		</table>
 	</form>
-	
+	<!-- <%=application.getRealPath("/")%>
+	<%=request.getRequestURI()%>
+	<%=application.getRealPath(request.getRequestURI())%> 
+	 <%=request.getContextPath()%>-->
 	<p>第三方登录：</p>
-	<p><a href="/outh2/qqlogin.do" ><img src="/images/qqlogo.png" style="width:130px;height:40px;" /></a></p>
-	<p><a href="#" onclick="openwx()" ><img src="/images/icon32_wx_button.png" style="width:130px;height:40px;" /></a></p>
+	<p><a href="/outh2/qqlogin.do" ><img src="<%=request.getContextPath()%>/images/qqlogo.png" style="width:130px;height:40px;" /></a></p>
+	<p><a href="#" onclick="openwx()" ><img src="<%=request.getContextPath()%>/images/icon32_wx_button.png" style="width:130px;height:40px;" /></a></p>
+	<p><a href="#" onclick="openzfb()" ><img src="<%=request.getContextPath()%>/images/icon54_zfb_img.png" style="width:130px;height:40px;" /></a></p>
 </body>
 </html>

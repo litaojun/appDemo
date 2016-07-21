@@ -73,6 +73,6 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>test</servlet-name>
-		<url-pattern>/oauth/*</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 </web-app>
