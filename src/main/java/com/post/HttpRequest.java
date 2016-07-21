@@ -44,6 +44,7 @@ public class HttpRequest {
             for (String key : map.keySet()) {
                 System.out.println(key + "--->" + map.get(key));
             }
+            
             // ���� BufferedReader����������ȡURL����Ӧ
             in = new BufferedReader(new InputStreamReader(
                     connection.getInputStream()));
