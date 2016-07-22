@@ -9,6 +9,8 @@ public class ResourceController {
 	@RequestMapping("/getUserInfo")
 	public String getUserInfo() {
 		return "resource";
+		
+		
 	}
 	
 	@RequestMapping("/getImage")
