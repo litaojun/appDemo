@@ -11,6 +11,8 @@ public class ResourceController {
 		return "resource";
 		
 		
+		
+		
 	}
 	
 	@RequestMapping("/getImage")
